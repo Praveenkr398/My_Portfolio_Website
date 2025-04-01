@@ -1,0 +1,21 @@
+
+.cursor {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 50%, rgba(255, 255, 255, 0.648) 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: stroke;
+    mix-blend-mode: diffrence;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out,
+  }
+  
+  .cursor:hover {
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 100%, rgba(255, 248, 248, 0.2) 80%);
+    box-shadow: 10px 4px 100px #fff700fa;
+  }
+  
