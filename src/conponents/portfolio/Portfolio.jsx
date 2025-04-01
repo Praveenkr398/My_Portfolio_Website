@@ -24,6 +24,14 @@ const items = [
   },
   {
     id: 3,
+    title: "Gemini Clone",
+    code: "https://github.com/Praveenkr398/GeminiCloneAPI",
+    preview: "https://igeminiclone.netlify.app/",
+    img: "/public/project/Gemini.png",
+    desc: "Gemini Clone is a fully responsive, AI-powered chatbot application built using React.js and styled with pure CSS. It allows users to interact with the Gemini API, send prompts, and receive AI-generated responses in real-time"
+  },
+  {
+    id: 4,
     title: "Quiz App",
     code: "https://github.com/Praveenkr398/QuizApp.js",
     preview: "https://praveenkr398.github.io/QuizApp.js/",
@@ -31,7 +39,7 @@ const items = [
     desc: "The Quiz App is a fully responsive web application built using HTML, CSS, and JavaScript. It allows users to test their knowledge by answering multiple-choice questions. The app provides real-time score tracking, a timer, and an engaging user experience.",
   },
   {
-    id: 4,
+    id: 5,
     title: "Todo App",
     code: "https://github.com/Praveenkr398/10TodoApp",
     preview: "https://reactitodoapp.netlify.app/",
@@ -39,7 +47,7 @@ const items = [
     desc: "The To-Do App is a fully responsive task management application built with React and React Hooks. It allows users to efficiently manage their daily tasks with an intuitive UI and essential features like adding, editing, deleting, and filtering tasks. The app also supports local storage, ensuring tasks are saved even after a page refresh.",
   },
   {
-    id: 5,
+    id: 6,
     title: "VIrtual Assistant",
     code: "https://github.com/Praveenkr398/AiVirtualAssistant",
     preview: "https://praveenkr398.github.io/AiVirtualAssistant/",
