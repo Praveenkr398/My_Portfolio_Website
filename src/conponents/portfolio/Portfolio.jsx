@@ -10,7 +10,7 @@ const items = [
     code: "https://github.com/Praveenkr398/Full-Responsive-Ecommerce-Website",
     preview:
       "https://praveenkr398.github.io/Full-Responsive-Ecommerce-Website/",
-    img: "/public/project/ecom.png",
+    img: "/project/ecom.png",
     desc: "A fully responsive e-commerce website built with React, Redux, HTML, CSS, and JavaScript. It includes a modern UI, product listing, search & filter, shopping cart, secure checkout, user authentication, and an admin panel for managing products. The website is optimized for all devices and supports dark & light mode.",
   },
   {
@@ -19,7 +19,7 @@ const items = [
     code: "https://github.com/Praveenkr398/PhotoPioX_PhotoCollection_Website",
     preview:
       "https://praveenkr398.github.io/PhotoPioX_PhotoCollection_Website/#home",
-    img: "/public/project/photopix.png",
+    img: "/project/photopix.png",
     desc: "The Image Search Engine is a web application that allows users to search for images based on keywords. It is built using HTML, CSS, JavaScript, and integrates with APIs like Unsplash or Pixabay to fetch high-quality images. The app provides a smooth user experience with features like infinite scrolling and responsive design.",
   },
   {
@@ -27,7 +27,7 @@ const items = [
     title: "Gemini Clone",
     code: "https://github.com/Praveenkr398/GeminiCloneAPI",
     preview: "https://igeminiclone.netlify.app/",
-    img: "/public/project/Gemini.png",
+    img: "/project/Gemini.png",
     desc: "Gemini Clone is a fully responsive, AI-powered chatbot application built using React.js and styled with pure CSS. It allows users to interact with the Gemini API, send prompts, and receive AI-generated responses in real-time"
   },
   {
@@ -35,7 +35,7 @@ const items = [
     title: "Quiz App",
     code: "https://github.com/Praveenkr398/QuizApp.js",
     preview: "https://praveenkr398.github.io/QuizApp.js/",
-    img: "/public/project/quiz.png",
+    img: "/project/quiz.png",
     desc: "The Quiz App is a fully responsive web application built using HTML, CSS, and JavaScript. It allows users to test their knowledge by answering multiple-choice questions. The app provides real-time score tracking, a timer, and an engaging user experience.",
   },
   {
@@ -43,7 +43,7 @@ const items = [
     title: "Todo App",
     code: "https://github.com/Praveenkr398/10TodoApp",
     preview: "https://reactitodoapp.netlify.app/",
-    img: "/public/project/todos.png",
+    img: "/project/todos.png",
     desc: "The To-Do App is a fully responsive task management application built with React and React Hooks. It allows users to efficiently manage their daily tasks with an intuitive UI and essential features like adding, editing, deleting, and filtering tasks. The app also supports local storage, ensuring tasks are saved even after a page refresh.",
   },
   {
@@ -51,7 +51,7 @@ const items = [
     title: "VIrtual Assistant",
     code: "https://github.com/Praveenkr398/AiVirtualAssistant",
     preview: "https://praveenkr398.github.io/AiVirtualAssistant/",
-    img: "/public/project/bot.png",
+    img: "/project/bot.png",
     desc: "The Virtual Assistant is a smart web application built using React.js that helps users perform various tasks using voice commands. It integrates Speech Recognition API to process voice inputs and provide real-time responses. This assistant can handle basic queries, search the web, set reminders, and more.",
   },
 ];
