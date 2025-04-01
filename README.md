@@ -1,5 +1,9 @@
 # 🚀 My Portfolio Website
 
+
+## 📖 About This Project
+This is a beautiful and interactive **portfolio website**, built using **React** and **CSS**. The website also integrates the **GitHub API** to dynamically display all my **GitHub repositories** in real-time.
+
 ## 🌐 Live Demo
 [🔗 View Live](https://ipraveenkr398.netlify.app/)
 
@@ -12,9 +16,6 @@
 Category:- "Website,Api, React, Hook, CSS,Top,Api"
 
 ---
-
-## 📖 About This Project
-This is a beautiful and interactive **portfolio website**, built using **React** and **CSS**. The website also integrates the **GitHub API** to dynamically display all my **GitHub repositories** in real-time.
 
 ### 🎨 Features
 - **Navigation Menu** (on the left) - **Home | Portfolio | Contact**
