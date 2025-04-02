@@ -4,12 +4,11 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { BrowserRouter as Router, useNavigate, Link } from "react-router-dom";
 
 const items = [
-  {
+ {
     id: 1,
     title: "Ecommerce Website",
     code: "https://github.com/Praveenkr398/Full-Responsive-Ecommerce-Website",
-    preview:
-      "https://praveenkr398.github.io/Full-Responsive-Ecommerce-Website/",
+    preview:"https://praveenkr398.github.io/Ecommerce-Website/",
     img: "/project/ecom.png",
     desc: "A fully responsive e-commerce website built with React, Redux, HTML, CSS, and JavaScript. It includes a modern UI, product listing, search & filter, shopping cart, secure checkout, user authentication, and an admin panel for managing products. The website is optimized for all devices and supports dark & light mode.",
   },
@@ -17,8 +16,7 @@ const items = [
     id: 2,
     title: "PhotoPix: Image API",
     code: "https://github.com/Praveenkr398/PhotoPioX_PhotoCollection_Website",
-    preview:
-      "https://praveenkr398.github.io/PhotoPioX_PhotoCollection_Website/#home",
+    preview: "https://praveenkr398.github.io/PhotoPioX_Website/",
     img: "/project/photopix.png",
     desc: "The Image Search Engine is a web application that allows users to search for images based on keywords. It is built using HTML, CSS, JavaScript, and integrates with APIs like Unsplash or Pixabay to fetch high-quality images. The app provides a smooth user experience with features like infinite scrolling and responsive design.",
   },
