@@ -10,6 +10,21 @@ const ProjectList = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
+    const fetchReadme = async (repoName) => {
+      const branches = ["main", "master"];
+      for (const branch of branches) {
+        try {
+          const response = await fetch(
+            `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repoName}/${branch}/README.md`
+          );
+          if (response.ok) return response.text();
+        } catch (error) {
+          console.error(`Error fetching README from ${branch} branch for ${repoName}:`, error);
+        }
+      }
+      return null;
+    };
+
     const fetchAllRepos = async () => {
       let page = 1;
       let allRepos = [];
@@ -17,7 +32,7 @@ const ProjectList = () => {
       try {
         while (true) {
           const repoResponse = await fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&page=${page}`
+            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&page=${page}&sort=updated`
           );
           const repos = await repoResponse.json();
 
@@ -31,34 +46,23 @@ const ProjectList = () => {
           allRepos
             .filter((repo) => repo.description) // **Only repos with description**
             .map(async (repo) => {
-              let categories = []; // Default Category
+              let categories = [];
               let netlifyLiveURL = "";
               let githubLiveURL = `https://${GITHUB_USERNAME}.github.io/${repo.name}/`;
 
-              try {
-                const readmeResponse = await fetch(
-                  `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${repo.name}/main/README.md`
-                );
-
-                if (readmeResponse.ok) {
-                  const readmeText = await readmeResponse.text();
-
-                  // ✅ **Category Extractor (Supports Multiple Categories)**
-                  const categoryMatch = readmeText.match(/Category:-\s*"([^"]+)"/);
-                  if (categoryMatch) {
-                    categories = categoryMatch[1]
-                      .split(",") // Split by Comma
-                      .map((c) => c.trim()); // Remove Spaces
-                  }
-
-                  // ✅ **Netlify LIVE URL Extractor**
-                  const netlifyLiveMatch = readmeText.match(
-                    /https:\/\/[a-zA-Z0-9-]+\.netlify\.app[^\s)]+/g
-                  );
-                  if (netlifyLiveMatch) netlifyLiveURL = netlifyLiveMatch[0];
+              const readmeText = await fetchReadme(repo.name);
+              if (readmeText) {
+                const categoryMatch = readmeText.match(/Category:-\s*"([^"]+)"/);
+                if (categoryMatch) {
+                  categories = categoryMatch[1]
+                    .split(",")
+                    .map((c) => c.trim());
                 }
-              } catch (error) {
-                console.error(`Error fetching README for ${repo.name}:`, error);
+
+                const netlifyLiveMatch = readmeText.match(
+                  /https:\/\/[a-zA-Z0-9-]+\.netlify\.app[^\s)]+/g
+                );
+                if (netlifyLiveMatch) netlifyLiveURL = netlifyLiveMatch[0];
               }
 
               return {
@@ -68,15 +72,17 @@ const ProjectList = () => {
                   repo.description.length > 100
                     ? repo.description.substring(0, 100) + "..."
                     : repo.description,
-                categories, // ✅ Multiple Categories Added
+                categories,
                 codeUrl: repo.html_url,
                 netlifyLive: netlifyLiveURL || null,
                 githubLive: netlifyLiveURL ? null : githubLiveURL,
+                updated_at: repo.updated_at,
               };
             })
         );
 
-        // ✅ Extract Unique Categories
+        projectsWithCategories.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
         const uniqueCategories = [
           "All",
           ...new Set(projectsWithCategories.flatMap((p) => p.categories)),
@@ -92,7 +98,6 @@ const ProjectList = () => {
     fetchAllRepos();
   }, []);
 
-  // ✅ Filtered Projects Based on Selected Category & Search
   const filteredProjects = projects.filter(
     (project) =>
       (selectedCategory === "All" ||
@@ -112,10 +117,8 @@ const ProjectList = () => {
         />
       </div>
 
-      {/* ✅ Total Repos Count */}
       <h2>My Projects <span>{projects.length}</span></h2>
 
-      {/* ✅ Categories Filter */}
       <div className="categories">
         {categories.map((cat) => (
           <button
